@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Forms</title>
+  <style>
+   :root{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    body{
+      background:#f3f6fb;
+      margin:0;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+    .card{
+      width:400px;
+      background:#fff;
+      border-radius:12px;
+      padding:22px;
+      box-shadow:0 8px 30px rgba(10,20,40,.06);
+      text-align:center;
+    }
+    h2{
+      margin-bottom:12px;
+      font-size:20px;
+      color:#1e293b;
+    }
+    label{
+      display:block;
+      margin-top:10px;
+      font-size:13px;
+      color:#333;
+      text-align:left;
+    }
+    input[type="text"], input[type="password"], input[type="email"] {
+      width:100%;
+      padding:10px;
+      margin-top:5px;
+      border-radius:6px;
+      border:1px solid #d8e0eb;
+    }
+    button{
+      margin-top:16px;
+      padding:10px 12px;
+      border-radius:8px;
+      border:none;
+      background:#2563eb;
+      color:#fff;
+      cursor:pointer;
+      width:100%;
+      font-size:14px;
+    }
+    .link{
+      margin-top:12px;
+      font-size:13px;
+      color:#2563eb;
+      cursor:pointer;
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h2>Login</h2>
+          <form onsubmit="return handleSubmit(event, 'login')">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" placeholder="Enter your email" required />
+
+            <label for="password">Password</label>
+<div style="position: relative;">
+  <input id="password" type="password" placeholder="Create a password" required
+         style="padding-right:40px; width:92%;">
+  <i class="fa-solid fa-eye" id="togglePassword" 
+     style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #64748b;"></i>
+</div>
+
+            <button type="submit">Login</button>
+          </form>
+          <div class="link" onclick="toggleForms('forgot')">Forgot Password?</div>
+  </div>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordField = document.getElementById("password");
+
+  togglePassword.addEventListener("click", function () {
+    // switch input type
+    const type = passwordField.type === "password" ? "text" : "password";
+    passwordField.type = type;
+
+    // switch icon
+    this.classList.toggle("fa-eye");
+    this.classList.toggle("fa-eye-slash");
+  });
+});
+    function toggleForms(type) {
+      let card = document.getElementById("card");
+       
+        if(type === "forgot") {
+        card.innerHTML = `
+          <h2>Forgot Password</h2>
+          <form onsubmit="return handleSubmit(event, 'forgot')">
+            <label for="reset-email">Email</label>
+            <input id="reset-email" type="email" placeholder="Enter your email" required />
+            <button type="submit">Reset Password</button>
+          </form>
+          <div class="link" onclick="toggleForms('login')">Back to Login</div>
+        `;
+      } else {
+        location.reload(); // reload for register
+      }
+    }
+
+    function handleSubmit(event, type) {
+      event.preventDefault(); // stop page reload
+
+      let valid = true;
+      let inputs = event.target.querySelectorAll("input[required]");
+      inputs.forEach(input => {
+        if(!input.value.trim()){
+          valid = false;
+        }
+      });
+
+      if(valid){
+        if(type === "register"){
+          alert("✅ Registration successful!");
+        } else if(type === "login"){
+          alert("✅ Login successful!");
+        } else if(type === "forgot"){
+          alert("📧 Password reset link sent!");
+        }
+
+        // clear inputs
+        inputs.forEach(input => input.value = "");
+      } else {
+        alert("⚠️ Please fill in all required fields.");
+      }
+
+      return false;
+    }
+  </script>
+</body>
+</html>

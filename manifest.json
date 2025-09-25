@@ -1,0 +1,70 @@
+{
+  "menu": [
+    {
+      "title": "Home",
+      "page": "home"
+    },
+    {
+      "title": "About",
+      "submenu": [
+        { "title": "Year", "page": "year" },
+        { "title": "Know about", "page": "know" },
+        { "title": "Policy", "page": "policy" }
+      ]
+    },
+    {
+      "title": "Services",
+      "submenu": [
+        { "title": "Web Design", "page": "webdesign" },
+        { "title": "SEO", "page": "seo" },
+        { "title": "Marketing", "page": "marketing" }
+      ]
+    },
+    {
+      "title": "Tools",
+      "submenu": [
+        { "title": "Edit", "page": "edit" },
+        { "title": "Report", "page": "report" },
+        { "title": "More info", "page": "moreinfo" }
+      ]
+    },
+    {
+      "title": "Contact",
+      "submenu": [
+        { "title": "Email", "page": "email" },
+        { "title": "Call us", "page": "phone" }
+      ]
+    },
+    { "title": "Register", "page": "register" },
+    { "title": "Login", "page": "login" }
+  ],
+  "slides": [
+    {
+      "image": "anonymous-hacker-data-breach-5k-3840x2160-7 - Copy.jpg",
+      "caption": "Welcome To Yusuf Web"
+    },
+    {
+      "image": "hacker-guy-fawkes-mask-code-black-hoodie-5k-8k-3840x2160-5575.jpg",
+      "caption": "Build and Grow"
+    },
+    {
+      "image": "hacker-laptop-hoodie-modern-malware-cyber-security-5k-3840x2160-1651.jpg",
+      "caption": "Learn HTML"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2025 My Website",
+    "social": [
+      { "platform": "YouTube", "url": "https://www.youtube.com/@yusufbashir-j8k?sub_confirmation=1", "icon": "play.png" },
+      { "platform": "WhatsApp", "url": "https://wa.me/2348068581625", "icon": "social.png" },
+      { "platform": "TikTok", "url": "https://www.tiktok.com/@yusufbashir1020?_t=ZS-8zse94Q2AZW&_r=1", "icon": "tik-tok.png" }
+    ]
+  },
+  "settings": {
+    "sidebarWidth": "250px",
+    "slideInterval": 10000,
+    "themeColor": "#4a90e2",
+    "backgroundColor": "#f4f4f9",
+    "textColor": "#333"
+  }
+}

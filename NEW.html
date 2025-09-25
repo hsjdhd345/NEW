@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<title>www.yusufweb.com</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  transition: margin-left 0.3s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #4a90e2;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2c3e50;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  position: relative;
+}
+
+.sidebar ul li a {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ecf0f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.sidebar ul li ul {
+  display: none;
+  background: #34495e;
+}
+
+.sidebar ul li.active > ul {
+  display: block;
+}
+
+.sidebar ul li ul li a {
+  padding-left: 40px;
+}
+
+/* Main content */
+#mainContent {
+  flex: 1;
+  padding: 100px 20px 20px 20px;
+  transition: margin-left 0.3s;
+  max-width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Slideshow */
+.slideshow-container {
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.mySlides { display: none; }
+.mySlides img { width: 100%; height: auto; display:block; border-radius: 10px; }
+.text {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
+
+/* Slideshow arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background: rgba(0,0,0,0.4);
+  transform: translateY(-50%);
+}
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.7); }
+
+/* Dots */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover { background-color: #4a90e2; }
+
+/* Fade animation */
+.fade { animation-name: fade; animation-duration: 1.5s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  background: #f4f4f9;
+  color: #333;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  margin-top: auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px){
+  #mainContent { padding: 120px 10px 20px 10px; }
+  .text { font-size: 20px; padding: 5px 10px; }
+  h1,h2 { font-size: 1.5em; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="menu-toggle" id="menu-toggle">&#9776;</span>
+  <div class="logo">Yusuf Website</div>
+</header>
+
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" class="dropdown-toggle">About</a>
+      <ul>
+        <li><a href="#" onclick="showPage('year')">Year</a></li>
+        <li><a href="#" onclick="showPage('know')">Know about</a></li>
+        <li><a href="#" onclick="showPage('policy')">Policy</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="dropdown-toggle">Services</a>
+      <ul>
+        <li><a href="#" onclick="showPage('webdesign')">Web Design</a></li>
+        <li><a href="#" onclick="showPage('seo')">SEO</a></li>
+        <li><a href="#" onclick="showPage('marketing')">Marketing</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="dropdown-toggle">Tools</a>
+      <ul>
+        <li><a href="#" onclick="showPage('edit')">Edit</a></li>
+        <li><a href="#" onclick="showPage('report')">Report</a></li>
+        <li><a href="#" onclick="showPage('moreinfo')">More info</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="dropdown-toggle">Contact</a>
+      <ul>
+        <li><a href="#" onclick="showPage('email')">Email</a></li>
+        <li><a href="#" onclick="showPage('phone')">Call us</a></li>
+      </ul>
+    </li>
+    <li><a href="REGISTER.html" onclick="showPage('register')">Register</a></li>
+    <li><a href="LOGIN1.html" onclick="showPage('login')">Login</a></li>
+  </ul>
+</div>
+
+<div id="mainContent">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="anonymous-hacker-data-breach-5k-3840x2160-7 - Copy.jpg">
+      <div class="text">Welcome To Yusuf Web</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="hacker-guy-fawkes-mask-code-black-hoodie-5k-8k-3840x2160-5575.jpg">
+      <div class="text">Build and Grow</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="hacker-laptop-hoodie-modern-malware-cyber-security-5k-3840x2160-1651.jpg">
+      <div class="text">Learn HTML</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <h1 id="mainHeading" style="text-align:center; color:#4a90e2"></h1>
+  <p style="text-align:center;">Hello! This is my web that I created myself using HTML.</p>
+  <p style="text-align:center;">Thank You.</p>
+  <p style="text-align:center;">For more info: <a style="color: #4a90e2" href="Info.html">Click here</a></p>
+</div>
+
+<footer>
+  <p>&copy; 2025 My Website</p>
+  <a href="https://www.youtube.com/@yusufbashir-j8k?sub_confirmation=1"><img src="play.png"  width="24"></a>
+      <a href="https://wa.me/2348068581625
+"><img src="social.png" width="24"></a>
+      <a href="https://www.tiktok.com/@yusufbashir1020?_t=ZS-8zse94Q2AZW&_r=1"><img src="tik-tok.png" width="24"></a>
+</footer>
+
+<script>
+// Hamburger toggle
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+const mainContent = document.getElementById('mainContent');
+menuToggle.addEventListener('click', () => {
+  if(sidebar.style.width === '250px'){
+    sidebar.style.width = '0';
+    mainContent.style.marginLeft = '0';
+  } else {
+    sidebar.style.width = '250px';
+    mainContent.style.marginLeft = '250px';
+  }
+});
+
+// Sidebar dropdowns
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    toggle.parentElement.classList.toggle('active');
+  });
+});
+
+// Typewriter effect
+function typeWriter(text, elementId, speed=100){
+  let i=0;
+  document.getElementById(elementId).innerHTML = "";
+  function typing(){
+    if(i<text.length){
+      document.getElementById(elementId).innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing,speed);
+    }
+  }
+  typing();
+}
+window.onload = function(){ typeWriter("Welcome to Yusuf's Website!", "mainHeading", 100); };
+
+// Slideshow
+let slideIndex=1;
+showSlides(slideIndex);
+function plusSlides(n){ showSlides(slideIndex+=n); }
+function currentSlide(n){ showSlides(slideIndex=n); }
+function showSlides(n){
+  let slides=document.getElementsByClassName("mySlides");
+  let dots=document.getElementsByClassName("dot");
+  if(n>slides.length){slideIndex=1;}
+  if(n<1){slideIndex=slides.length;}
+  for(let i=0;i<slides.length;i++){slides[i].style.display="none";}
+  for(let i=0;i<dots.length;i++){dots[i].className=dots[i].className.replace(" active","");}
+  slides[slideIndex-1].style.display="block";
+  dots[slideIndex-1].className += " active";
+}
+setInterval(()=>{ plusSlides(1); },10000);
+
+// Page loader
+function showPage(page){
+  const content = document.getElementById('mainContent');
+  if(page==='home'){
+    window.location.reload();
+  }
+}
+</script>
+</body>
+</html>
