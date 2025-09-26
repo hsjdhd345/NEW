@@ -322,6 +322,99 @@ function showPage(page){
     window.location.reload();
   }
 }
+function showPage(page){
+  const content = document.getElementById('mainContent');
+
+  if(page === 'home'){
+    window.location.reload();
+  }
+  else if(page === 'year'){
+    content.innerHTML = `
+      <h1>Year</h1>
+      <p>This is the Year page content.</p>
+    `;
+  }
+  else if(page === 'know'){
+    content.innerHTML = `
+      <h1>Know About</h1>
+      <p>Some information about Yusuf's site.</p>
+    `;
+  }
+  else if(page === 'policy'){
+    content.innerHTML = `
+      <h1>Policy</h1>
+      <p>Website policy and guidelines go here.</p>
+    `;
+  }
+  else if(page === 'webdesign'){
+    content.innerHTML = `
+      <h1>Web Design</h1>
+      <p>We provide custom web design services.</p>
+    `;
+  }
+  else if(page === 'seo'){
+    content.innerHTML = `
+      <h1>SEO</h1>
+      <p>Search engine optimization information and services.</p>
+    `;
+  }
+  else if(page === 'marketing'){
+    content.innerHTML = `
+      <h1>Marketing</h1>
+      <p>Grow your online presence with our marketing tools.</p>
+    `;
+  }
+  else if(page === 'edit'){
+    content.innerHTML = `
+      <h1>Edit</h1>
+      <p>Edit your profile and website settings here.</p>
+    `;
+  }
+  else if(page === 'report'){
+    content.innerHTML = `
+      <h1>Report</h1>
+      <p>Generate or view reports here.</p>
+    `;
+  }
+  else if(page === 'moreinfo'){
+    content.innerHTML = `
+      <h1>More Info</h1>
+      <p>Extra resources and information about the site.</p>
+    `;
+  }
+  else if(page === 'email'){
+    content.innerHTML = `
+      <h1>Email</h1>
+      <p>Contact us at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    `;
+  }
+  else if(page === 'phone'){
+    content.innerHTML = `
+      <h1>Call Us</h1>
+      <p>Phone: +234 000 000 0000</p>
+    `;
+  }
+  else if(page === 'register'){
+    content.innerHTML = `
+      <h1>Register</h1>
+      <p><a href="REGISTER.html">Go to the registration page</a>.</p>
+    `;
+  }
+  else if(page === 'login'){
+    content.innerHTML = `
+      <h1>Login</h1>
+      <p><a href="LOGIN1.html">Go to the login page</a>.</p>
+    `;
+  }
+  else {
+    content.innerHTML = `
+      <h1>Page Not Found</h1>
+      <p>The page you’re looking for doesn’t exist.</p>
+    `;
+  }
+}
+
 </script>
 </body>
 </html>
+
