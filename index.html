@@ -330,68 +330,148 @@ function showPage(page){
   }
   else if(page === 'year'){
     content.innerHTML = `
-      <h1>Year</h1>
-      <p>This is the Year page content.</p>
+      <section>
+  <h1>Year in Review</h1>
+  <p>Every year brings new lessons, challenges, and growth. Here you’ll find highlights of what we’ve built, achieved, and learned.</p>
+  <ul>
+    <li><strong>2023:</strong> Launched the first version of the website.</li>
+    <li><strong>2024:</strong> Expanded with new tools and services.</li>
+    <li><strong>2025:</strong> Focusing on community and growth.</li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'know'){
     content.innerHTML = `
-      <h1>Know About</h1>
-      <p>Some information about Yusuf's site.</p>
+      <section>
+  <h1>About This Website</h1>
+  <p>This site is a space to learn, share, and connect. Built from scratch with HTML, CSS, and JavaScript, it’s proof that ideas can grow into something real.</p>
+  <blockquote>“Knowledge grows when it’s shared.”</blockquote>
+</section>
+
     `;
   }
   else if(page === 'policy'){
     content.innerHTML = `
-      <h1>Policy</h1>
-      <p>Website policy and guidelines go here.</p>
+      <section>
+  <h1>Site Policy</h1>
+  <p>We keep things simple: respect privacy, respect others, and use this site responsibly.</p>
+  <h2>Guidelines:</h2>
+  <ul>
+    <li>No sharing of personal data without consent.</li>
+    <li>Keep communication polite and constructive.</li>
+    <li>Any misuse may result in restricted access.</li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'webdesign'){
     content.innerHTML = `
-      <h1>Web Design</h1>
-      <p>We provide custom web design services.</p>
+      <section>
+  <h1>Web Design Services</h1>
+  <p>Beautiful, functional websites tailored to your goals. We focus on clean design, fast performance, and mobile responsiveness.</p>
+  <h2>What we offer:</h2>
+  <ul>
+    <li>Custom website layouts</li>
+    <li>Responsive designs for all devices</li>
+    <li>Ongoing updates and support</li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'seo'){
     content.innerHTML = `
-      <h1>SEO</h1>
-      <p>Search engine optimization information and services.</p>
+      <section>
+  <h1>SEO Services</h1>
+  <p>Search Engine Optimization helps your site get discovered. We use proven strategies to boost rankings and visibility.</p>
+  <h2>Focus Areas:</h2>
+  <ul>
+    <li>Keyword optimization</li>
+    <li>Content structure</li>
+    <li>Site speed improvements</li>
+    <li>Backlink strategies</li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'marketing'){
     content.innerHTML = `
-      <h1>Marketing</h1>
-      <p>Grow your online presence with our marketing tools.</p>
+      <section>
+  <h1>Marketing Solutions</h1>
+  <p>Good ideas deserve to be seen. Our marketing tools help you reach the right people with the right message.</p>
+  <h2>Our Approach:</h2>
+  <ul>
+    <li>Social media campaigns</li>
+    <li>Email newsletters</li>
+    <li>Content marketing</li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'edit'){
     content.innerHTML = `
-      <h1>Edit</h1>
-      <p>Edit your profile and website settings here.</p>
+      <section>
+  <h1>Edit Profile</h1>
+  <form>
+    <label>Name: <input type="text" name="name"></label><br><br>
+    <label>Email: <input type="email" name="email"></label><br><br>
+    <button type="submit">Save Changes</button>
+  </form>
+</section>
+
     `;
   }
   else if(page === 'report'){
     content.innerHTML = `
-      <h1>Report</h1>
-      <p>Generate or view reports here.</p>
+      <section>
+  <h1>Reports</h1>
+  <p>Generate insights and view analytics for your activity.</p>
+  <button>Download Report</button>
+</section>
+
     `;
   }
   else if(page === 'moreinfo'){
     content.innerHTML = `
-      <h1>More Info</h1>
-      <p>Extra resources and information about the site.</p>
+      <section>
+  <h1>More Information</h1>
+  <p>Looking for something else? Check out our resources, FAQs, and links to partner sites.</p>
+  <ul>
+    <li><a href="#">Frequently Asked Questions</a></li>
+    <li><a href="#">Resource Library</a></li>
+    <li><a href="#">Community Forum</a></li>
+  </ul>
+</section>
+
     `;
   }
   else if(page === 'email'){
     content.innerHTML = `
-      <h1>Email</h1>
-      <p>Contact us at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <section>
+  <h1>Email Us</h1>
+  <p>We’d love to hear from you. Send us a message anytime.</p>
+  <form>
+    <label>Your Email: <input type="email" required></label><br><br>
+    <label>Message:<br><textarea rows="4" required></textarea></label><br><br>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
     `;
   }
   else if(page === 'phone'){
     content.innerHTML = `
-      <h1>Call Us</h1>
-      <p>Phone: +234 000 000 0000</p>
+      <section>
+  <h1>Call Us</h1>
+  <p>Have a question? We’re available during business hours.</p>
+  <p><strong>Phone:</strong> +234 806 858 1625</p>
+</section>
+
     `;
   }
   else if(page === 'register'){
@@ -417,4 +497,5 @@ function showPage(page){
 </script>
 </body>
 </html>
+
 
